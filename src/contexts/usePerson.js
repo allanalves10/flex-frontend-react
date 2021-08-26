@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import { Api } from '../service/Api';
+import { ApiPlaceHolder } from '../service/Api';
 
 export const PersonContext = createContext();
 
@@ -10,9 +10,8 @@ export const PersonProvider = ({ children }) => {
   useEffect(() => {
     async function getPerson() {
         try {
-            const { data } = await Api.get('users');
+            const { data } = await ApiPlaceHolder.get('users');
             setPerson(data);
-            toast.success('Dados dos usuários carregados com sucesso!');
 
         } catch (err) {
             console.error(err);
