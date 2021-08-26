@@ -68,12 +68,8 @@ export function FormDialogContract({ open, onHide, onConfirm, debts, onChange, t
         </div>
         <div className="p-field">
           <label htmlFor="description">Valor</label>
-          <InputNumber
+          <InputText
             id="Description"
-            mode="currency"
-            currency="BRL"
-            currencyDisplay="symbol"
-            locale="pt-BR"
             value={debts.valor}
             onChange={e => onChange(e, 'valor')}
             required
