@@ -3,6 +3,7 @@ import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
 import { Dropdown } from 'primereact/dropdown';
 import { InputText } from 'primereact/inputtext';
+import { InputNumber } from 'primereact/inputnumber';
 import { usePerson } from '../../contexts/usePerson';
 
 export function FormDialogContract({ open, onHide, onConfirm, debts, onChange, type }) {
@@ -67,8 +68,12 @@ export function FormDialogContract({ open, onHide, onConfirm, debts, onChange, t
         </div>
         <div className="p-field">
           <label htmlFor="description">Valor</label>
-          <InputText
+          <InputNumber
             id="Description"
+            mode="currency"
+            currency="BRL"
+            currencyDisplay="symbol"
+            locale="pt-BR"
             value={debts.valor}
             onChange={e => onChange(e, 'valor')}
             required
